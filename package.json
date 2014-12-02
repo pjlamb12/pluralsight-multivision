@@ -8,7 +8,7 @@
   },
   "engines": {
     "node": "0.10.x",
-    "npm": "2.1.x",
+    "npm": "2.1.x"
   },
   "author": "Preston Lamb",
   "license": "MIT",
