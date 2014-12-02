@@ -4,7 +4,7 @@ var express = require('express'),
 	bodyParser = require('body-parser');
 
 
-module.exports function(app, config) {
+module.exports = function(app, config) {
 	function compile(str, path) {
 		return stylus(str).set('filename', path);
 	}
