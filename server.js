@@ -4,31 +4,13 @@ var express = require('express'),
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var app = express();
-var config = {
-	rootPath: __dirname
-};
+var config = require('./server/config/config.js')[env];
 
 require('./server/config/express')(app, config);
 
-if( env === 'development'){
-	mongoose.connect('mongodb://localhost/multivision');
-} else {
-	mongoose.connect('mongodb://pjlamb12:multivision@ds061360.mongolab.com:61360/multivision');
-}
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error...'));
-db.once('open', function callback() {
-	console.log('multivision db opened');
-});
+require('./server/config/mongoose')(config);
 
-app.get('/partials/*', function(req, res) {
-		res.render('../../public/app/' + req.params[0]);
-});
+require('./server/config/routes')(app);
 
-app.get('*', function(req, res) {
-	res.render('index');
-});
-
-var port = process.env.PORT || 3030;
-app.listen(port);
-console.log('Listening on port ' + port + '...');
+app.listen(config.port);
+console.log('Listening on port ' + config.port + '...');
