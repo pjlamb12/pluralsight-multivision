@@ -5,20 +5,21 @@
     "Preston Lamb <plamb@axis41.com>"
   ],
   "description": "\"Extreme Tech Training\"",
-    "license": "MIT",
-    "ignore": [
-      "**/.*",
-      "node_modules",
-      "bower_components",
-      "public/vendor",
-      "test",
-      "tests"
-    ],
-    "dependencies": {
-      "jquery": "~2.1.1",
-      "toastr": "~2.0.2",
-      "angular": "~1.2.16",
-      "angular-resource": "~1.2.16",
-      "angular-route": "~1.2.16"
-    }
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "toastr": "~2.0.2",
+    "angular": "~1.2.16",
+    "angular-resource": "~1.2.16",
+    "angular-route": "~1.2.16",
+    "bootstrap": "~3.3.1"
   }
+}
